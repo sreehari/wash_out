@@ -7,10 +7,10 @@ GIT
       rubyntlm
 
 PATH
-  remote: /Users/inossidabile/Repos/wash_out
+  remote: /Users/sreehari/MyProjects/wash_out
   specs:
-    wash_out (0.6.1)
-      nori (~> 2.0.0)
+    wash_out (0.8.0)
+      nori (>= 2.0.0)
 
 GEM
   remote: http://rubygems.org/
@@ -181,7 +181,7 @@ DEPENDENCIES
   rails (= 3.2.12)
   rb-fsevent
   rspec-rails
-  savon
+  savon (>= 2.0.0)
   simplecov
   simplecov-summary
   tzinfo
