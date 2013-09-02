@@ -13,7 +13,7 @@ class WashOut::Middleware
 
   def self.raise_or_render_rexml_parse_error e, env
     raise e unless env.has_key? 'HTTP_SOAPACTION'
-  
+
     # Normally input would be a StringIO, but Passenger has a different API:
     input = env['rack.input']
     req = if input.respond_to? :string then input.string else input.read end
@@ -22,7 +22,7 @@ class WashOut::Middleware
 WashOut::Exception: #{e.continued_exception} for:
 #{req}
     EOERR
-    [400, {'Content-Type' => 'text/xml'},
+    [400, {'Content-Type' => 'application/soap+xml'},
       [render_client_soap_fault("Error parsing SOAP Request XML")]]
   end
 

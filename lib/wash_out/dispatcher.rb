@@ -90,7 +90,7 @@ module WashOut
       @name      = controller_path.gsub('/', '_')
 
       render :template => "wash_with_soap/#{WashOut::Engine.style}/wsdl", :layout => false,
-             :content_type => 'text/xml'
+             :content_type => 'application/soap+xml'
     end
 
     # Render a SOAP response.
@@ -143,7 +143,7 @@ module WashOut
       render :template => "wash_with_soap/#{WashOut::Engine.style}/response",
              :layout => false,
              :locals => { :result => inject.call(result, @action_spec[:out]) },
-             :content_type => 'text/xml'
+             :content_type => 'application/soap+xml'
     end
 
     # This action is a fallback for all undefined SOAP actions.
@@ -163,7 +163,7 @@ module WashOut
       render :template => "wash_with_soap/#{WashOut::Engine.style}/error", :status => 500,
              :layout => false,
              :locals => { :error_message => message },
-             :content_type => 'text/xml'
+             :content_type => 'application/soap+xml'
     end
 
     def self.included(controller)
