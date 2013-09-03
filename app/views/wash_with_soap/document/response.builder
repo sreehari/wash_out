@@ -1,5 +1,5 @@
 xml.instruct!
-xml.tag! "soap:Envelope", "xmlns:soap" => 'http://schemas.xmlsoap.org/soap/envelope/',
+xml.tag! "soap:Envelope", "xmlns:soap" => 'http://www.w3.org/2003/05/soap-envelope',
                           "xmlns:xsd" => 'http://www.w3.org/2001/XMLSchema',
                           "xmlns:tns" => @namespace do
   xml.tag! "soap:Body" do
